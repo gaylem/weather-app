@@ -38,13 +38,11 @@ This coding challenge is intended to demonstrate self-driven product design deci
 ## API Information
 
 1. Sign up for a free API key from OpenWeatherMap.org
+2. Utilize the following endpoints
 
-| Name | Endpoint | Documentation |
-| ---- | -------- | ------------- |
-| Current Weather | https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lo 
-n={lon}&exclude={part}&appid={API_key} | https://openweather map.org/api/one-call- 
-3 |
-| Historical Weather | https://api.openweathermap.org/data/3.0/onecall/timemachi 
-ne?lat=flat}&lon={lon}&dt={time}&appid={API key} | https://openweather map.org/api/one-call- 
-3 |
-| Weather Icon | http://openweathermap.org/img/w/{Icon_ID}.png | N/A | 
+| Name              | Endpoint                                                                                     | Documentation                   |
+|-------------------|----------------------------------------------------------------------------------------------|---------------------------------|
+| Current Weather   | https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API_key} | https://openweathermap.org/api/one-call-api |
+| Historical Weather| https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={lat}&lon={lon}&dt={time}&appid={API_key} | https://openweathermap.org/api/one-call-api |
+| Weather Icon      | http://openweathermap.org/img/w/{Icon_ID}.png                                                 | N/A                             |
+
