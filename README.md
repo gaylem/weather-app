@@ -6,7 +6,7 @@ This coding challenge is intended to demonstrate self-driven product design deci
 
 - [ ] Develop a simple web app that uses weather data from the public Open Weather API
 - [ ] Deploy the app publicly using a free-tier cloud service (Heroku, AWS, GCP)
-- [ ] Upload your code to a public GitHub repo for review
+- [x] Upload your code to a public GitHub repo for review
 - [ ] Be prepared to demo and discuss your application in a Zoom technical interview
 
 ## Minimum Features
