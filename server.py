@@ -3,14 +3,18 @@ import requests
 import os
 import datetime
 from dotenv import load_dotenv
+from flask_cors import CORS, cross_origin
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:9000"}})
 app.config['API_KEY'] = os.getenv('API_KEY')
 
+
 @app.route('/weather', methods=['GET'])
+@cross_origin()
 def get_weather():
     city = request.args.get('city')
     api_key = app.config['API_KEY']
@@ -18,7 +22,7 @@ def get_weather():
     if not city:
         return jsonify({'error': 'City parameter is required'}), 400
 
-    #* Current weather API call
+    # Current weather API call
     current_url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
     current_response = requests.get(current_url)
 
@@ -31,17 +35,14 @@ def get_weather():
     lat = current_data['coord']['lat']
     lon = current_data['coord']['lon']
 
-    #* Historical weather API call for each of the past 5 days
+    # Historical weather API call for the past 5 days
+    historical_url = f'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat={lat}&lon={lon}&dt='
     historical_data = []
     for i in range(1, 6):
-        # Calculate the timestamp for i days ago in UTC
         timestamp = int((datetime.datetime.utcnow() - datetime.timedelta(days=i)).timestamp())
-        historical_url = f'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat={lat}&lon={lon}&dt={timestamp}&appid={api_key}'
-        historical_response = requests.get(historical_url)
-
+        historical_response = requests.get(f'{historical_url}{timestamp}&appid={api_key}')
         if historical_response.status_code == 200:
             historical_data.append(historical_response.json())
-        print(historical_data)
 
     return jsonify({'current_weather': current_data, 'historical_weather': historical_data})
 
