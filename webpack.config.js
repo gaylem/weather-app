@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -25,8 +25,8 @@ module.exports = {
     ],
   },
   devServer: {
-    static: path.join(__dirname, 'public'), // Serve files from the public directory
-    compress: true, // Enable gzip compression for everything served
-    port: 9000, // Specify a port to use for the dev server
+    static: path.join(__dirname, 'public'),
+    compress: true,
+    port: 9000,
   },
 };
