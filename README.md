@@ -43,8 +43,8 @@ This coding challenge is intended to demonstrate self-driven product design deci
 | ---- | -------- | ------------- |
 | Current Weather | https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lo 
 n={lon}&exclude={part}&appid={API_key} | https://openweather map.org/api/one-call- 
-3 
+3 |
 | Historical Weather | https://api.openweathermap.org/data/3.0/onecall/timemachi 
 ne?lat=flat}&lon={lon}&dt={time}&appid={API key} | https://openweather map.org/api/one-call- 
-3 
+3 |
 | Weather Icon | http://openweathermap.org/img/w/{Icon_ID}.png | N/A | 
