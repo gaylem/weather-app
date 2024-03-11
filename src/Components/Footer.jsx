@@ -6,7 +6,7 @@ const Footer = () => {
       <p>
         Weather data provided by{' '}
         <a href='https://openweathermap.org/' className='text-blue-500 hover:underline'>
-          OpenWeatherMap
+          Open Weather API
         </a>
       </p>
     </footer>
