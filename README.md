@@ -2,6 +2,8 @@
 
 This coding challenge is intended to demonstrate self-driven product design decisions and pro-active user-centric thinking, as well as the engineering skills necessary to build and deploy a simple Python-based web app.
 
+View the completed weather app [here](https://bain-weather-app-1bb2d43eb419.herokuapp.com/).
+
 ## Criteria
 
 - [x] Develop a simple web app that uses weather data from the public Open Weather API
