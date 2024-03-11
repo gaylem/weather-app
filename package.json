@@ -1,5 +1,5 @@
 {
-  "name": "weather-or-not",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "A weather app",
   "main": "index.js",
@@ -12,7 +12,9 @@
   "dependencies": {
     "postcss": "^8.4.35",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-json-view": "^1.21.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
