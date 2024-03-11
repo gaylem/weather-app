@@ -2,7 +2,7 @@ import React from 'react';
 
 const JsonBtn = ({ weatherData }) => {
   if (!weatherData) {
-    return null; // Return null if weatherData is not available yet
+    return null;
   }
 
   const openJsonInNewTab = () => {
@@ -15,7 +15,7 @@ const JsonBtn = ({ weatherData }) => {
 
   return (
     <div className='container mx-auto flex flex-col divide-solid p-10'>
-      <button onClick={openJsonInNewTab} className='text-blue-500 underline hover:text-blue-700'>
+      <button onClick={openJsonInNewTab} className='text-white bg-sky-600 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-sky-600 dark:hover:bg-cyan-500 dark:focus:ring-sky-800'>
         View Raw JSON in New Tab
       </button>
     </div>
