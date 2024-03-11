@@ -18,7 +18,7 @@ def serve_react_app():
     return send_from_directory('public', 'index.html')
 
 # Serve bundle.js
-@app.route('/bundle.js', methods=['GET'])
+@app.route('/bundle.js', methods=['GET', 'OPTIONS'])
 def serve_bundle():
     return send_from_directory('dist', 'bundle.js')
 
@@ -26,6 +26,13 @@ def serve_bundle():
 @app.route('/weather', methods=['GET'])
 @cross_origin()
 def get_weather():
+    
+    if request.method == 'OPTIONS':
+        response = jsonify({'message': 'Preflight request allowed'})
+        response.headers.add('Access-Control-Allow-Methods', 'GET')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        return response
+    
     city = request.args.get('city')
     api_key = app.config['API_KEY']
 
