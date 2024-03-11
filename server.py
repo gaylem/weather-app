@@ -9,7 +9,7 @@ from flask_cors import CORS, cross_origin
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:9000"}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:9000", "https://bain-weather-app-1bb2d43eb419.herokuapp.com"]}})
 app.config['API_KEY'] = os.getenv('API_KEY')
 
 
