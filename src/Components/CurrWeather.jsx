@@ -5,7 +5,7 @@ function CurrWeather({ cityName, weatherData }) {
     return null; // Return null if weatherData is not available yet
   }
 
-  const { temp, weather, coord } = weatherData.current_weather;
+  const { weather, coord, main } = weatherData.current_weather;
   const mainWeather = weather[0].main;
   const description = weather[0].description;
   const iconId = weather[0].icon;
@@ -17,9 +17,14 @@ function CurrWeather({ cityName, weatherData }) {
       <div className='flex items-center'>
         <img src={`http://openweathermap.org/img/w/${iconId}.png`} alt='Weather Icon' className='mr-4' />
         <div>
-          <p>Temperature: {temp} K</p>
+          <p>Temperature: {main.temp}</p>
           <p>Main Weather: {mainWeather}</p>
           <p>Description: {description}</p>
+          <p>Feels Like: {main.feels_like}</p>
+          <p>Humidity: {main.humidity}</p>
+          <p>Pressure: {main.pressure}</p>
+          <p>Max Temperature: {main.temp_max}</p>
+          <p>Min Temperature: {main.temp_min}</p>
           <p>Latitude: {lat}</p>
           <p>Longitude: {lon}</p>
         </div>
