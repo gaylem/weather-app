@@ -4,7 +4,7 @@ This coding challenge is intended to demonstrate self-driven product design deci
 
 ## Criteria
 
-- [ ] Develop a simple web app that uses weather data from the public Open Weather API
+- [x] Develop a simple web app that uses weather data from the public Open Weather API
 - [ ] Deploy the app publicly using a free-tier cloud service (Heroku, AWS, GCP)
 - [x] Upload your code to a public GitHub repo for review
 - [x] Be prepared to demo and discuss your application in a Zoom technical interview
@@ -16,10 +16,10 @@ This coding challenge is intended to demonstrate self-driven product design deci
     - [x] Current weather from the "Current Weather" endpoint
     - [x] Current weather icon (using "icon" data point and Weather Icon endpoint)
     - [x] Latitude and longitude of the selected city
-- [ ] A dynamic display of historical weather (e.g., past week) data
-    - [ ] Temperature ("temp")
-    - [ ] Main weather ("main")
-    - [ ] Description of weather ("Description")
+- [x] A dynamic display of historical weather (e.g., past week) data
+    - [x] Temperature ("temp")
+    - [x] Main weather ("main")
+    - [x] Description of weather ("Description")
 - [x] Allow the user to view the raw API output in a JSON string
 - [x] Allow the user to download the historical weather data in a simple Excel document
 
