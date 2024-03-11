@@ -5,7 +5,7 @@ This coding challenge is intended to demonstrate self-driven product design deci
 ## Criteria
 
 - [x] Develop a simple web app that uses weather data from the public Open Weather API
-- [ ] Deploy the app publicly using a free-tier cloud service (Heroku, AWS, GCP)
+- [x] Deploy the app publicly using a free-tier cloud service (Heroku, AWS, GCP) **=> I used Heroku**
 - [x] Upload your code to a public GitHub repo for review
 - [x] Be prepared to demo and discuss your application in a Zoom technical interview
 
@@ -23,6 +23,12 @@ This coding challenge is intended to demonstrate self-driven product design deci
 - [x] Allow the user to view the raw API output in a JSON string
 - [x] Allow the user to download the historical weather data in a simple Excel document
 
+## UI Mock-Up
+
+<div>I used Excalidraw to mock up a quick UI design.</div>
+<img width="596" alt="Screenshot 2024-03-11 at 11 59 19 AM" src="https://github.com/gaylem/weather-app/assets/76500899/b70780e1-3bdc-411a-8d24-1d0ad2176f99">
+
+
 ## Extra Features
 
 - [ ] Other thoughtful user features or design decisions
@@ -31,9 +37,9 @@ This coding challenge is intended to demonstrate self-driven product design deci
 
 ## Suggested Tech stack
 
-1. Any popular Python framework (FastAPI, Flask)
-2. Any popular JavaScript or TypeScript framework (e.g., Svelte, Vue)
-3. Feel free to use libraries for styling (Bootstrap, TailwindCSS, daisyUI)
+1. Any popular Python framework (FastAPI, Flask) => I used Flask
+2. Any popular JavaScript or TypeScript framework (e.g., Svelte, Vue) **=> I used React**
+3. Feel free to use libraries for styling (Bootstrap, TailwindCSS, daisyUI) **=> I used Tailwind**
 
 ## API Information
 
