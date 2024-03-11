@@ -8,7 +8,7 @@ const SearchBar = () => {
   const [cities, setCities] = useState([]);
   const [weatherData, setWeatherData] = useState(null);
 
-  const baseUrl = REACT_APP_NODE_ENV;
+  const baseUrl = process.env.REACT_APP_NODE_ENV === 'production' ? 'https://bain-weather-app-1bb2d43eb419.herokuapp.com/' : 'http://127.0.0.1:5000';
 
   const handleSubmit = async e => {
     e.preventDefault();
