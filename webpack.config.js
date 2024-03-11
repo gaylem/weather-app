@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -29,4 +30,9 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      REACT_APP_NODE_ENV: JSON.stringify(process.env.REACT_APP_NODE_ENV),
+    }),
+  ],
 };
