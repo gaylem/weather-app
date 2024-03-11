@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      REACT_APP_NODE_ENV: JSON.stringify(process.env.REACT_APP_NODE_ENV),
+      'process.env.REACT_APP_NODE_ENV': JSON.stringify(process.env.REACT_APP_NODE_ENV),
     }),
   ],
 };
