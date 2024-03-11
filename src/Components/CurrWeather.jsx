@@ -14,10 +14,10 @@ function CurrWeather({ cityName, weatherData }) {
   return (
     <div className='container mx-auto p-10'>
       <h1 className='text-sky-700'>{cityName} Current Weather</h1>
-      <div className='grid grid-cols-2 md:grid-cols-1 gap-4 mt-4'>
-        <div className='bg-gray-100 p-4 flex items-center flex-wrap'>
+      <div className='flex flex-wrap gap-4 mt-4 bg-gray-100'>
+        <div className='p-4 flex items-center flex-wrap'>
           <img src={`http://openweathermap.org/img/w/${iconId}.png`} alt='Weather Icon' className='mr-4' />
-          <div className='grid grid-cols-2 gap-4 mt-4' style={{ flexWrap: 'wrap' }}>
+          <div>
             <p>Temperature: {main.temp}</p>
             <p>Max Temperature: {main.temp_max}</p>
             <p>Min Temperature: {main.temp_min}</p>
