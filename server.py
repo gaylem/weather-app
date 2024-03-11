@@ -36,7 +36,7 @@ def get_weather():
     lon = current_data['coord']['lon']
 
     # Historical weather API call for the past 5 days
-    historical_url = f'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat={lat}&lon={lon}&dt='
+    historical_url = f'https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={lat}&lon={lon}&dt='
     historical_data = []
     for i in range(1, 6):
         timestamp = int((datetime.datetime.utcnow() - datetime.timedelta(days=i)).timestamp())
