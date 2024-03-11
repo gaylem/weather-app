@@ -12,9 +12,10 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://localhost:9000", "https://bain-weather-app-1bb2d43eb419.herokuapp.com"]}})
 app.config['API_KEY'] = os.getenv('API_KEY')
 
-@app.route('/')
-def index():
-    return 'Server is running'
+# Serve build files
+@app.route('/', methods=['GET'])
+def serve_react_app():
+    return send_from_directory('/dist', 'index.html')
 
 
 @app.route('/weather', methods=['GET'])
