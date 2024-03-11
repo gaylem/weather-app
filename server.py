@@ -15,7 +15,7 @@ app.config['API_KEY'] = os.getenv('API_KEY')
 # Serve build files
 @app.route('/', methods=['GET'])
 def serve_react_app():
-    return send_from_directory('/dist', 'index.html')
+    return send_from_directory('public', 'index.html')
 
 
 @app.route('/weather', methods=['GET'])
