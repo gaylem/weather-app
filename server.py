@@ -22,8 +22,7 @@ def serve_react_app():
 def serve_bundle():
     return send_from_directory('dist', 'bundle.js')
 
-
-
+# Server weather data
 @app.route('/weather', methods=['GET'])
 @cross_origin()
 def get_weather():
