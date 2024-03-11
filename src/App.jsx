@@ -9,9 +9,7 @@ function App({ cityName }) {
       <Header />
       <main className='flex-grow'>
         <SearchBar />
-        <div className='container mx-auto flex flex-col divide-solid p-10'>
-          {!cityName && <p>Search for a city to view the current and past weather.</p>}
-          </div>
+        <div className='container mx-auto flex flex-col divide-solid p-10'></div>
       </main>
       <Footer />
     </div>
