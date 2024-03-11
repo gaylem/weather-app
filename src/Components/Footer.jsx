@@ -2,8 +2,13 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className='bg-gray-800 text-white p-4'>
-      <p>&copy; 2024 Weather...Or Not? All Rights Reserved.</p>
+    <footer className='flex justify-center items-center bg-gray-800 text-white p-5'>
+      <p>
+        Weather data provided by{' '}
+        <a href='https://openweathermap.org/' className='text-blue-500 hover:underline'>
+          OpenWeatherMap
+        </a>
+      </p>
     </footer>
   );
 };
