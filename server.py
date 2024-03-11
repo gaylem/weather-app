@@ -17,6 +17,12 @@ app.config['API_KEY'] = os.getenv('API_KEY')
 def serve_react_app():
     return send_from_directory('public', 'index.html')
 
+# Serve bundle.js
+@app.route('/bundle.js', methods=['GET'])
+def serve_bundle():
+    return send_from_directory('dist', 'bundle.js')
+
+
 
 @app.route('/weather', methods=['GET'])
 @cross_origin()
