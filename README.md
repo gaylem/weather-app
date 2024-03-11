@@ -36,7 +36,7 @@ This coding challenge is intended to demonstrate self-driven product design deci
 
 ## Suggested Tech stack
 
-1. Any popular Python framework (FastAPI, Flask) => I used Flask
+1. Any popular Python framework (FastAPI, Flask) **=> I used Flask**
 2. Any popular JavaScript or TypeScript framework (e.g., Svelte, Vue) **=> I used React**
 3. Feel free to use libraries for styling (Bootstrap, TailwindCSS, daisyUI) **=> I used Tailwind**
 
