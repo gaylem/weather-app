@@ -37,7 +37,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='max-w-5xl mx-auto p-8'>
+    <div className='max-w-5xl mx-auto p-8 sm:p-5'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='default-search' className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
           Search
