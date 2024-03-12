@@ -1,6 +1,10 @@
 import React from 'react';
 
 function PastWeather({ cityName, weatherData }) {
+  const kelvinToFahrenheit = k => {
+    return ((k - 273.15) * 9) / 5 + 32;
+  };
+
   return (
     <div className='container mx-auto p-10'>
       <h2 className='text-sky-700 text-2xl font-bold'>{cityName} Past Weather</h2>
@@ -10,7 +14,7 @@ function PastWeather({ cityName, weatherData }) {
             <img src={`http://openweathermap.org/img/w/${weather.data[0].weather[0].icon}.png`} alt='Weather Icon' className='mr-4' />
             <div>
               <h3 className='text-lg font-semibold'>Date: {new Date(weather.data[0].dt * 1000).toLocaleDateString()}</h3>
-              <p>Temperature: {weather.data[0].temp}</p>
+              <p>Temperature: {kelvinToFahrenheit(weather.data[0].temp).toFixed(2)}°F</p>
               <p>Main Weather: {weather.data[0].weather[0].main}</p>
               <p>Description: {weather.data[0].weather[0].description}</p>
             </div>

@@ -14,6 +14,10 @@ function CurrWeather({ cityName, weatherData }) {
   const iconId = weather[0].icon;
   const { lat, lon } = coord;
 
+  const kelvinToFahrenheit = (k) => {
+    return ((k - 273.15) * 9/5) + 32;
+  };
+
   const handleViewPastWeather = () => {
     setShowPastWeather(prevState => !prevState);
   };
@@ -25,12 +29,12 @@ function CurrWeather({ cityName, weatherData }) {
         <div className='p-4 flex justify-evenly items-center flex-wrap w-full'>
           <img src={`http://openweathermap.org/img/w/${iconId}.png`} alt='Weather Icon' className='mr-4' />
           <div>
-            <p>Temperature: {main.temp}</p>
-            <p>Max Temperature: {main.temp_max}</p>
-            <p>Min Temperature: {main.temp_min}</p>
+            <p>Temperature: {kelvinToFahrenheit(main.temp).toFixed(2)}°F</p>
+            <p>Max Temperature: {kelvinToFahrenheit(main.temp_max).toFixed(2)}°F</p>
+            <p>Min Temperature: {kelvinToFahrenheit(main.temp_min).toFixed(2)}°F</p>
             <p>Main Weather: {mainWeather}</p>
             <p>Description: {description}</p>
-            <p>Feels Like: {main.feels_like}</p>
+            <p>Feels Like: {kelvinToFahrenheit(main.feels_like).toFixed(2)}°F</p>
             <p>Humidity: {main.humidity}</p>
             <p>Pressure: {main.pressure}</p>
             <p>Latitude: {lat}</p>
