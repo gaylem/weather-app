@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Components/Header.jsx';
 import Footer from './Components/Footer.jsx';
 import SearchBar from './Components/SearchBar.jsx';
+import AllWeather from './Components/AllWeather.jsx';
 
 function App({ cityName }) {
   return (
@@ -11,6 +12,7 @@ function App({ cityName }) {
         <SearchBar />
         {/* The code below is unnecessary */}
         {/*<div className='container mx-auto flex flex-col divide-solid p-10'></div>*/}
+        <AllWeather />
       </main>
       <Footer />
     </div>
