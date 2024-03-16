@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PastWeather from './PastWeather.jsx';
+import { kelvinToFahrenheit } from '../utils.js';
 
 // cityName and weatherData from SearchBar
 function CurrWeather({ cityName, weatherData }) {
@@ -18,12 +19,6 @@ function CurrWeather({ cityName, weatherData }) {
   const description = weather[0].description;
   const iconId = weather[0].icon;
   const { lat, lon } = coord;
-
-  //! Turn into hook
-  const kelvinToFahrenheit = k => {
-    const f = ((k - 273.15) * 9) / 5 + 32;
-    return f.toFixed(2);
-  };
 
   const handleViewPastWeather = () => {
     setShowPastWeather(prevState => !prevState);
