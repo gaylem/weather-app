@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import PastWeather from './PastWeather.jsx';
 
+// cityName and weatherData from SearchBar
 function CurrWeather({ cityName, weatherData }) {
-  const [showPastWeather, setShowPastWeather] = useState(false);
-
+  //! Moved this up
   if (!weatherData) {
     return null;
   }
 
+  const [showPastWeather, setShowPastWeather] = useState(false);
+
+  // Extract weather, coord, and main objects
   const { weather, coord, main } = weatherData.current_weather;
+
+  // Store properties as variables
   const mainWeather = weather[0].main;
   const description = weather[0].description;
   const iconId = weather[0].icon;
   const { lat, lon } = coord;
 
+  //! Turn into hook
   const kelvinToFahrenheit = k => {
-    return ((k - 273.15) * 9) / 5 + 32;
+    const f = ((k - 273.15) * 9) / 5 + 32;
+    return f.toFixed(2);
   };
 
   const handleViewPastWeather = () => {
@@ -24,19 +31,20 @@ function CurrWeather({ cityName, weatherData }) {
 
   return (
     <div className='container mx-auto p-4 bg-gray-100 rounded-lg mt-4'>
-      <h1 className='text-sky-700 text-2xl sm:text-3xl font-bold p-1'>{cityName} Current Weather</h1>
+      {/* //! First letter of cityName always capitalized */}
+      <h1 className='text-sky-700 text-2xl sm:text-3xl font-bold p-1'>{cityName.charAt(0).toUpperCase() + cityName.slice(1)} Current Weather</h1>
       <div className='flex flex-col gap-4 p-3'>
         <div className='bg-white p-3 mt-4 flex justify-evenly items-center flex-wrap'>
           <div>
             <img src={`http://openweathermap.org/img/w/${iconId}.png`} alt='Weather Icon' className='w-12 h-12 sm:w-16 sm:h-16 mr-3 sm:mr-4' />
           </div>
           <div className='mt-4 p-2'>
-            <p>Temperature: {kelvinToFahrenheit(main.temp).toFixed(2)}°F</p>
-            <p>Max Temperature: {kelvinToFahrenheit(main.temp_max).toFixed(2)}°F</p>
-            <p>Min Temperature: {kelvinToFahrenheit(main.temp_min).toFixed(2)}°F</p>
+            <p>Temperature: {kelvinToFahrenheit(main.temp)}°F</p>
+            <p>Max Temperature: {kelvinToFahrenheit(main.temp_max)}°F</p>
+            <p>Min Temperature: {kelvinToFahrenheit(main.temp_min)}°F</p>
             <p>Main Weather: {mainWeather}</p>
             <p>Description: {description}</p>
-            <p>Feels Like: {kelvinToFahrenheit(main.feels_like).toFixed(2)}°F</p>
+            <p>Feels Like: {kelvinToFahrenheit(main.feels_like)}°F</p>
             <p>Humidity: {main.humidity}</p>
             <p>Pressure: {main.pressure}</p>
             <p>Latitude: {lat}</p>
