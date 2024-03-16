@@ -46,7 +46,7 @@ const ExcelBtn = ({ weatherData }) => {
   };
 
   return (
-    <div className='container mx-auto flex flex-col divide-solid p-5'>
+    <div className='p-5'>
       <button onClick={downloadExcel} className='text-white bg-sky-600 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-sky-600 dark:hover:bg-cyan-500 dark:focus:ring-sky-800'>
         Download Past Data to Excel
       </button>

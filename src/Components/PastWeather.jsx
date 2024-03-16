@@ -9,9 +9,10 @@ function PastWeather({ cityName, weatherData }) {
 
   return (
     <div className='container mx-auto p-4'>
+      <hr />
       {/* //! First letter of cityName always capitalized */}
-      <h2 className='text-sky-700 text-2xl sm:text-2xl font-bold p-1'>{cityName.charAt(0).toUpperCase() + cityName.slice(1)} Past Weather</h2>
-      <div className='flex flex-col gap-4 p-3'>
+      <h2 className='text-sky-700 text-2xl sm:text-2xl font-bold p-5'>{cityName.charAt(0).toUpperCase() + cityName.slice(1)} Past Weather</h2>
+      <div className='flex flex-col gap-4 p-4'>
         {weatherData.historical_weather.map((weather, index) => (
           <div key={index} className='flex bg-white rounded-lg shadow-md p-3'>
             <div>

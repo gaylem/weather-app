@@ -7,7 +7,7 @@ const JsonBtn = ({ weatherData }) => {
   }
 
   const openJsonInNewTab = () => {
-    // Converts the weatherData object (presumably containing weather information) into a formatted JSON string. 
+    // Converts the weatherData object (presumably containing weather information) into a formatted JSON string.
     // null indicates no replacer function is used, and 2 specifies an indentation of 2 spaces for formatting.
     const jsonString = JSON.stringify(weatherData, null, 2);
     // A Blob is created to convert the JSON string into an object that can be used to generate a URL using URL.createObjectURL.
@@ -23,7 +23,7 @@ const JsonBtn = ({ weatherData }) => {
   };
 
   return (
-    <div className='container mx-auto flex flex-col divide-solid p-5'>
+    <div className='p-5'>
       <button onClick={openJsonInNewTab} className='text-white bg-sky-600 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-sky-600 dark:hover:bg-cyan-500 dark:focus:ring-sky-800'>
         View Raw JSON in New Tab
       </button>

@@ -29,13 +29,14 @@ const SearchBar = () => {
       console.log(weatherData);
       setWeatherData(weatherData);
     } catch (error) {
+      //! Remove console logs from prod build with Terser
       console.error(error);
       setWeatherData(null);
     }
   };
 
   return (
-    <div className='max-w-3xl mx-auto p-5'>
+    <div className='max-w-3xl mx-auto p-10'>
       <form className='max-w-2xl mx-auto' onSubmit={handleSubmit}>
         <label htmlFor='default-search' className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
           Search
