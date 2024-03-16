@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import CurrWeather from './CurrWeather.jsx';
-import JsonBtn from './JsonBtn.jsx';
-import ExcelBtn from './ExcelBtn.jsx';
+import AllWeather from './AllWeather.jsx';
 
 const SearchBar = () => {
   const [city, setCity] = useState('');
@@ -37,8 +35,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='max-w-5xl mx-auto p-8 sm:p-5'>
-      <form onSubmit={handleSubmit}>
+    <div className='max-w-3xl mx-auto p-5'>
+      <form className='max-w-2xl mx-auto' onSubmit={handleSubmit}>
         <label htmlFor='default-search' className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
           Search
         </label>
@@ -54,11 +52,7 @@ const SearchBar = () => {
           </button>
         </div>
       </form>
-      <div className='flex flex-wrap sm:flex-nowrap space-x-2'>
-        {weatherData && <JsonBtn weatherData={weatherData} />}
-        {weatherData && <ExcelBtn weatherData={weatherData} />}
-      </div>
-      {weatherData && weatherData.map((data, index) => <CurrWeather key={index} cityName={cities[index]} weatherData={data} />)}
+      <div className='flex flex-wrap sm:flex-nowrap space-x-2'>{weatherData && <AllWeather weatherData={weatherData} cities={cities} />}</div>
     </div>
   );
 };
