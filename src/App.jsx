@@ -9,7 +9,8 @@ function App({ cityName }) {
       <Header />
       <main className='flex-grow'>
         <SearchBar />
-        <div className='container mx-auto flex flex-col divide-solid p-10'></div>
+        {/* The code below is unnecessary */}
+        {/*<div className='container mx-auto flex flex-col divide-solid p-10'></div>*/}
       </main>
       <Footer />
     </div>
