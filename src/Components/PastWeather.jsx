@@ -15,7 +15,7 @@ function PastWeather({ cityName, weatherData }) {
       <div className='flex flex-wrap flex-col gap-4'>
         {weatherData.historical_weather.map((weather, index) => (
           <div key={index} className='flex flex-wrap bg-white rounded-lg shadow-md'>
-            <div className='p-5'>
+            <div className='p-5 flex justify-center items-center'>
               <img src={`http://openweathermap.org/img/w/${weather.data[0].weather[0].icon}.png`} alt='Weather Icon' className='w-12 h-12 sm:w-16 sm:h-16 float-left' />
             </div>
             <div className='p-5'>
