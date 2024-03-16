@@ -25,7 +25,7 @@ function CurrWeather({ cityName, weatherData }) {
   };
 
   return (
-    <div className='container mx-auto p-4 bg-gray-100 rounded-lg mt-4'>
+    <div className='container mx-auto w-full p-4 bg-gray-100 rounded-lg mt-4'>
       {/* //! First letter of cityName always capitalized */}
       <h1 className='text-sky-700 text-2xl sm:text-3xl font-bold p-1'>{cityName.charAt(0).toUpperCase() + cityName.slice(1)} Current Weather</h1>
       <div className='flex flex-col gap-4 p-3'>
