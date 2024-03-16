@@ -1,9 +1,11 @@
 import React from 'react';
+import { kelvinToFahrenheit } from '../utils';
 
 function PastWeather({ cityName, weatherData }) {
-  const kelvinToFahrenheit = k => {
-    return ((k - 273.15) * 9) / 5 + 32;
-  };
+  //! Add error handling
+  if (!weatherData) {
+    return null;
+  }
 
   return (
     <div className='container mx-auto p-4'>
@@ -16,7 +18,7 @@ function PastWeather({ cityName, weatherData }) {
             </div>
             <div>
               <h3 className='text-lg font-semibold'>Date: {new Date(weather.data[0].dt * 1000).toLocaleDateString()}</h3>
-              <p>Temperature: {kelvinToFahrenheit(weather.data[0].temp).toFixed(2)}°F</p>
+              <p>Temperature: {kelvinToFahrenheit(weather.data[0].temp)}°F</p>
               <p>Main Weather: {weather.data[0].weather[0].main}</p>
               <p>Description: {weather.data[0].weather[0].description}</p>
             </div>
