@@ -1,30 +1,37 @@
 import React from 'react';
 import * as XLSX from 'xlsx';
 
+// Receives weatherData from SearchBar component
 const ExcelBtn = ({ weatherData }) => {
   const downloadExcel = () => {
     // Flatten data
+    //! Removed index 0
+    //! Cleaned up fields
     const flattenedData = weatherData.flatMap(cityData =>
-      cityData.historical_weather.map(weather => ({
-        city: cityData.current_weather.name,
-        country: cityData.current_weather.sys.country,
-        date: new Date(weather.data[0].dt * 1000).toLocaleDateString(),
-        temperature: weather.data[0].temp,
-        humidity: weather.data[0].humidity,
-        pressure: weather.data[0].pressure,
-        weatherDescription: weather.data[0].weather[0].description,
-        windSpeed: weather.data[0].wind_speed,
-        clouds: weather.data[0].clouds,
-        dewPoint: weather.data[0].dew_point,
-        sunrise: new Date(weather.data[0].sunrise * 1000).toLocaleString(),
-        sunset: new Date(weather.data[0].sunset * 1000).toLocaleString(),
-        visibility: weather.data[0].visibility,
-        uvi: weather.data[0].uvi,
-        windDeg: weather.data[0].wind_deg,
-        windGust: weather.data[0].wind_gust,
-        timezone: weather.timezone,
-        timezoneOffset: weather.timezone_offset,
-      })),
+      cityData.historical_weather.flatMap(histWeather =>
+        histWeather.data.map(day => ({
+          city: cityData.current_weather.name,
+          country: cityData.current_weather.sys.country,
+          date: new Date(day.dt * 1000).toLocaleDateString(),
+          dewPoint: day.dew_point,
+          feelsLike: day.feels_like,
+          humidity: day.humidity,
+          pressure: day.pressure,
+          sunrise: new Date(day.sunrise * 1000).toLocaleString(),
+          sunset: new Date(day.sunset * 1000).toLocaleString(),
+          temperature: day.temp,
+          uvi: day.uvi,
+          visibility: day.visibility,
+          description: day.weather[0].description,
+          main: day.weather[0].main,
+          windSpeed: day.wind_speed,
+          windDeg: day.wind_deg,
+          lat: histWeather.lat,
+          lon: histWeather.lon,
+          timezone: histWeather.timezone,
+          timezoneOffset: histWeather.timezone_offset,
+        })),
+      ),
     );
 
     // Convert to Excel sheet
