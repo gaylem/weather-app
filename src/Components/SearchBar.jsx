@@ -12,11 +12,14 @@ const SearchBar = () => {
     e.preventDefault();
 
     try {
+      // Cities typed into search box are turned into an array and the state is updated
       const citiesArray = city.split(',').map(c => c.trim());
       setCities(citiesArray);
 
+      // Concurrently fetch data for all cities in citiesArray
       const responses = await Promise.all(citiesArray.map(c => fetch(`${baseUrl}/weather?city=${c}`)));
 
+      // All requests must be completed before continuing, otherwise throw error
       const weatherData = await Promise.all(
         responses.map(async response => {
           if (!response.ok) {
@@ -26,7 +29,7 @@ const SearchBar = () => {
         }),
       );
 
-      console.log(weatherData);
+      // Update weatherData state
       setWeatherData(weatherData);
     } catch (error) {
       //! Remove console logs from prod build with Terser
