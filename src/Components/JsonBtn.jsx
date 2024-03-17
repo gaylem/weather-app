@@ -24,7 +24,7 @@ const JsonBtn = ({ weatherData }) => {
 
   return (
     <div className='p-5'>
-      <button onClick={openJsonInNewTab} className='text-white bg-sky-600 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-sky-600 dark:hover:bg-cyan-500 dark:focus:ring-sky-800'>
+      <button onClick={openJsonInNewTab} className='text-white bg-sky-600 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 hover:shadow-lg'>
         View Raw JSON in New Tab
       </button>
     </div>
