@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AllWeather from './AllWeather.jsx';
 
-// TODO: Add error messaging and improve search bar on mobile devices
+// TODO: Add error messaging and improve search bar design on mobile devices
 const SearchBar = () => {
   const [city, setCity] = useState('');
   const [cities, setCities] = useState([]);
@@ -33,7 +33,7 @@ const SearchBar = () => {
       // Update weatherData state
       setWeatherData(weatherData);
     } catch (error) {
-      //! Remove console logs from prod build with Terser
+      //TODO: Remove console logs from prod build with Terser
       console.error(error);
       setWeatherData(null);
     }
