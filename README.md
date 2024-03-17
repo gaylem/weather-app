@@ -32,7 +32,7 @@ View the completed weather app [here](https://bain-weather-app-1bb2d43eb419.hero
 
 ## Extra Features
 
-- [x] Other thoughtful user features or design decisions **=> I tried to make the site as responsive as possible in the time allotted**
+- [x] Other thoughtful user features or design decisions **=> Improved responsiveness and accessibility, and added success/error messaging under search bar**
 - [ ] Features involving data analysis techniques
 - [ ] Features involving AI
 
