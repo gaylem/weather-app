@@ -11,7 +11,13 @@ function PastWeather({ cityName, weatherData }) {
     <div className='p-4'>
       <hr />
       {/* //! First letter of cityName always capitalized */}
-      <h2 className='text-sky-700 text-2xl sm:text-2xl font-bold p-5'>{cityName.charAt(0).toUpperCase() + cityName.slice(1)} Past Weather</h2>
+      <h2 className='text-sky-700 text-2xl sm:text-2xl font-bold p-5 [text-shadow:_1px_1px_5px_rgb(0_0_0_/_15%)]'>
+        {cityName
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ')}{' '}
+        Past Weather
+      </h2>
       <div className='flex flex-wrap flex-col gap-4'>
         {weatherData.historical_weather.map((weather, index) => (
           <div key={index} className='flex flex-wrap bg-white rounded-lg shadow-md'>
