@@ -22,7 +22,7 @@ function PastWeather({ cityName, weatherData }) {
         {weatherData.historical_weather.map((weather, index) => (
           <div key={index} className='flex flex-wrap bg-white rounded-lg shadow-md'>
             <div className='flex justify-center items-center p-1 md:p-2 lg:p-5'>
-              <img src={`http://openweathermap.org/img/w/${weather.data[0].weather[0].icon}.png`} alt='Weather Icon' className='w-12 h-12' />
+              <img src={`http://openweathermap.org/img/w/${weather.data[0].weather[0].icon}.png`} alt={`Weather Icon ${index}`} className='w-12 h-12' />
             </div>
             <div className='p-3 md:p-4 lg:p-5'>
               <h3 className='text-lg font-semibold'>Date: {new Date(weather.data[0].dt * 1000).toLocaleDateString()}</h3>
