@@ -40,7 +40,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='max-w-3xl mx-auto p-10'>
+    <div className='max-w-3xl mx-auto p-2 md:p-5 lg:p-10'>
       <form className='max-w-1xl mx-auto' onSubmit={handleSubmit}>
         <label htmlFor='default-search' className='mb-2 text-sm font-medium text-gray-900 sr-only'>
           Search
@@ -52,12 +52,12 @@ const SearchBar = () => {
             </svg>
           </div>
           <input type='search' id='default-search' className='block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-50' placeholder='Search for cities with comma-separated values' required value={city} onChange={e => setCity(e.target.value)} />
-          <button type='submit' className='text-white absolute right-2.5 bottom-2.5 bg-sky-600 hover:bg-cyan-500 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2'>
+          <button type='submit' className='btn-primary absolute right-2.5 bottom-2.5'>
             Search
           </button>
         </div>
       </form>
-      <div className='flex flex-wrap sm:flex-nowrap space-x-2'>{weatherData && <AllWeather weatherData={weatherData} cities={cities} />}</div>
+      <div className='flex flex-wrap space-x-2'>{weatherData && <AllWeather weatherData={weatherData} cities={cities} />}</div>
     </div>
   );
 };
