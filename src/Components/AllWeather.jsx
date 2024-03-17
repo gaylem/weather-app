@@ -5,7 +5,7 @@ import ExcelBtn from './ExcelBtn.jsx';
 
 const AllWeather = ({ weatherData, cities }) => {
   return (
-    <div className='flex flex-wrap'>
+    <div className='container mx-auto flex flex-wrap'>
       <div className='flex flex-wrap justify-center mx-auto p-1 md:p-2 lg:p-5'>
         {weatherData && <JsonBtn weatherData={weatherData} />}
         {weatherData && <ExcelBtn weatherData={weatherData} />}

@@ -8,7 +8,7 @@ function PastWeather({ cityName, weatherData }) {
   }
 
   return (
-    <div className='p-1 md:p-2 lg:p-5'>
+    <div className='container mx-auto p-1 md:p-2 lg:p-5'>
       <hr />
       {/* //! First letter of cityName always capitalized */}
       <h2 className='h2 [text-shadow:_0_1px_5px_rgb(0_0_0_/_20%)] p-4 md:p-4 lg:p-5'>
