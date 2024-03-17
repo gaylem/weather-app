@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply text-white bg-sky-600 hover:bg-cyan-500 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2;
+  }
+
+  .h1 {
+    @apply text-sky-700 text-2xl sm:text-3xl font-bold p-2;
+  }
+
+  .h2 {
+    @apply text-sky-700 text-2xl sm:text-2xl font-bold p-5;
+  }
+}
