@@ -3,7 +3,7 @@ import PastWeather from './PastWeather.jsx';
 import { kelvinToFahrenheit } from '../utils.js';
 
 // cityName and weatherData from SearchBar
-function CurrWeather({ cityName, weatherData }) {
+function CurrWeather({ cityName = '', weatherData }) {
   //! Moved this up
   if (!weatherData) {
     return null;
