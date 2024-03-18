@@ -60,7 +60,7 @@ const SearchBar = () => {
                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
                 </svg>
               </div>
-              <input type='search' id='default-search' className='block p-4 pl-10 m-1 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-50' placeholder='ex: Chicago, Paris, Tokyo, New Orleans' required value={city} onChange={e => setCity(e.target.value)} aria-label='Enter city names separated by commas' />
+              <input type='search' id='default-search' className='block p-4 pl-10 m-1 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none focus-ring-10' placeholder='ex: Chicago, Paris, Tokyo, New Orleans' required value={city} onChange={e => setCity(e.target.value)} aria-label='Enter city names separated by commas' />
             </div>
           </div>
           <button type='submit' className='search-btn' aria-label='Search'>

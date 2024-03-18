@@ -17,4 +17,8 @@
   .h2 {
     @apply text-sky-700 text-2xl sm:text-2xl font-bold p-5;
   }
+
+  .focus-ring-10:focus {
+    box-shadow: 0 0 5px 1px rgba(59, 130, 246, 0.5);
+  }
 }
